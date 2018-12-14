@@ -1,0 +1,72 @@
+1544593618876	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.tJrWF0xYbp8L"
+1544593621360	Marionette	INFO	Listening on port 50606
+1544593621432	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544593622041	Marionette	INFO	Stopped listening on port 50606
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+[Child 33354, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 729
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 841: Error: Connection is not open.
+1544593637862	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.X0dcKx9YX7zE"
+1544593639790	Marionette	INFO	Listening on port 50710
+1544593639833	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544593640086	Marionette	INFO	Stopped listening on port 50710
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+1544593665355	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.E3IV9h5KJUVc"
+1544593667323	Marionette	INFO	Listening on port 50814
+1544593667408	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544593667606	Marionette	INFO	Stopped listening on port 50814
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+1544593702398	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.JsR1kLDRCl3p"
+1544593704370	Marionette	INFO	Listening on port 50923
+1544593704457	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544593704825	Marionette	INFO	Stopped listening on port 50923
+1544593737137	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.JyTGi2tRMO0n"
+1544593739075	Marionette	INFO	Listening on port 51042
+1544593739093	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544593739437	Marionette	INFO	Stopped listening on port 51042
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 841: Error: Connection is not open.
+1544593785288	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.wTrxb2yZBxrP"
+1544593787242	Marionette	INFO	Listening on port 51174
+1544593787338	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544593787605	Marionette	INFO	Stopped listening on port 51174
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+1544593832746	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.ru0qDTkM766F"
+1544593834679	Marionette	INFO	Listening on port 51431
+1544593834686	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544593834994	Marionette	INFO	Stopped listening on port 51431
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+1544593889423	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.U2UM4lwjjv1J"
+1544593891485	Marionette	INFO	Listening on port 51588
+1544593891580	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544593891868	Marionette	INFO	Stopped listening on port 51588
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+1544593920518	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.vIoNrNRuZa6T"
+1544593922449	Marionette	INFO	Listening on port 51693
+1544593922472	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544593932816	Marionette	INFO	Stopped listening on port 51693
+1544593981339	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.Zey7V24uOPpp"
+1544593983235	Marionette	INFO	Listening on port 51852
+1544593983274	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544593993573	Marionette	INFO	Stopped listening on port 51852
+1544594006239	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.etu7bkw85A58"
+1544594008131	Marionette	INFO	Listening on port 51954
+1544594008206	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544594008520	Marionette	INFO	Stopped listening on port 51954
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+1544594097189	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.D0YPaqN6plPC"
+1544594099083	Marionette	INFO	Listening on port 52178
+1544594099134	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544594099468	Marionette	INFO	Stopped listening on port 52178
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+1544594134829	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.hvJQdvBfJRhy"
+1544594136709	Marionette	INFO	Listening on port 52302
+1544594136781	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544594137134	Marionette	INFO	Stopped listening on port 52302
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 841: Error: Connection is not open.
+1544594150023	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/qx/bzh72mzs1dx9d0zh0prwk0880000gp/T/rust_mozprofile.yb02n5wS1jR1"
+1544594151925	Marionette	INFO	Listening on port 52372
+1544594151967	Marionette	WARN	TLS certificate errors will be ignored for this session
+1544594152377	Marionette	INFO	Stopped listening on port 52372
+JavaScript error: resource://activity-stream/lib/TopSitesFeed.jsm, line 86: TypeError: setting getter-only property "_currentSearchHostname"
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 841: Error: Connection is not open.
