@@ -3,6 +3,6 @@
 
 - 예시 github 주소 (https://github.com/hjwp/Book-TDD-Web-Dev-Python)
 
-### [1부](https://github.com/bartkim0426/readings/blob/master/TDD-Web-Dev-Python/ch1.md)
+### [1부 1부 TDD와 Django 개요](https://github.com/bartkim0426/readings/blob/master/TDD-Web-Dev-Python/ch1.md)
 
 ### [2부]
