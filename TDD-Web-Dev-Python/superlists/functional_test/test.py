@@ -47,8 +47,12 @@ class NewVisitorTest(LiveServerTestCase):
         # 공작깃털 사기 입력
         inputbox().send_keys('공작깃털 사기')
 
+        # 엔터치면 새로운 url로 변경
         # 엔터 치면 1: 공작깃털 사기 입력됨
         inputbox().send_keys(Keys.ENTER)
+        edith_list_url = self.browser.current_url
+        self.assertRegex(edith_list_url, 'lists/.+')
+
         with self.wait_for_page_load(timeout=10):
             self.check_for_row_in_list_table('1: 공작깃털 사기')
 
@@ -58,5 +62,30 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox().send_keys(Keys.ENTER)
         with self.wait_for_page_load(timeout=10):
             self.check_for_row_in_list_table('2: 공작깃털로 그물만들기')
+        
+        # 새로운 사용자인 프란시스
+        self.browser.quit()
+        self.browser = webdriver.Firefox()
+
+        # edith의 리스트 안보이는지 확인
+        self.browser.get(self.live_server_url)
+        page_text = self.browser.find_element_by_tag_name('body').text
+        self.assertNotIn('공작깃털 사기', page_text)
+        self.assertNotIn('그물만들기', page_text)
+
+        # 프란시스의 아이템
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        inputbox.send_keys('우유사기')
+        inputbox.send_keys(Keys.ENTER)
+
+        # 프란시스 전용 URL
+        francis_list_url = self.browser.current_url
+        self.assertRegex(francis_list_url, 'lists/.+')
+        self.assertNotEqual(francis_list_url, edith_list_url)
+
+        # 에디스 흔적 없는지 확인
+        page_text = self.browser.find_element_by_tag_name('body').text
+        self.assertNotIn('공작깃털 사기', page_text)
+        self.assertIn('우유사기', page_text)
 
         self.fail('Finish the test!')
