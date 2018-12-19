@@ -57,9 +57,9 @@ class NewVisitorTest(LiveServerTestCase):
             self.check_for_row_in_list_table('1: 공작깃털 사기')
 
         # 여분의 텍스트 상자에 다시 입력
-        inputbox = lambda: self.browser.find_element_by_id('id_new_item')
-        inputbox().send_keys('공작깃털로 그물만들기')
-        inputbox().send_keys(Keys.ENTER)
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        inputbox.send_keys('공작깃털로 그물만들기')
+        inputbox.send_keys(Keys.ENTER)
         with self.wait_for_page_load(timeout=10):
             self.check_for_row_in_list_table('2: 공작깃털로 그물만들기')
         
