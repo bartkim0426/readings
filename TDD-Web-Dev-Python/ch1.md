@@ -189,8 +189,99 @@ home_page = None
 - 메모장 / todo 앱에 기록하면 좋을듯
 
 
+> 참고로 selenium 3.x 버전을 사용한다면 에러가 날 수 있다. 그래서 에러가 나지 않게 `wait_for_page_load` 함수를 만들어서 명시적으로 WebDriverWait를 해주면 된다. 코드는 여기
+
+
+```
+from django.test import LiveServerTestCase
+from contextlib import contextmanager
+from selenium import webdriver 
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.expected_conditions import staleness_of
+
+class NewVisitorTest(LiveServerTestCase):
+    # test 시작전
+    def setUp(self):
+        self.browser = webdriver.Firefox()
+
+    # test 시작후
+    # 테스트 에러 발생되어도 tearDown 실행 (setUp에 exception 있는상황 제외하고)
+    def tearDown(self):
+        self.browser.quit()
+
+    @contextmanager
+    def wait_for_page_load(self, timeout=30):
+        old_page = self.browser.find_element_by_tag_name("html")
+        yield WebDriverWait(self.browser, timeout).until(
+            staleness_of(old_page)
+        )
+
+    # refactor: 중복되는 함수를 피하기 위한 helper 함수
+    def check_for_row_in_list_table(self, row_text):
+        table = self.browser.find_element_by_id('id_list_table')
+        rows = table.find_elements_by_tag_name('tr')
+        self.assertIn(row_text, [row.text for row in rows])
+
+    # test_ 로 시작
+    def test_can_start_a_list_and_retriev_it_later(self):
+        self.browser.get(self.live_server_url)
+
+        self.assertIn('To-Do', self.browser.title)
+
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('To-Do', header_text)
+        # item 추가하기
+        inputbox = lambda: self.browser.find_element_by_id('id_new_item')
+        self.assertEqual(
+            inputbox().get_attribute('placeholder'),
+            '작업 아이템 입력'
+        )
+        
+        # 공작깃털 사기 입력
+        inputbox().send_keys('공작깃털 사기')
+
+        # 엔터 치면 1: 공작깃털 사기 입력됨
+        inputbox().send_keys(Keys.ENTER)
+        with self.wait_for_page_load(timeout=10):
+            self.check_for_row_in_list_table('1: 공작깃털 사기')
+
+        # 여분의 텍스트 상자에 다시 입력
+        inputbox = lambda: self.browser.find_element_by_id('id_new_item')
+        inputbox().send_keys('공작깃털로 그물만들기')
+        inputbox().send_keys(Keys.ENTER)
+        with self.wait_for_page_load(timeout=10):
+            self.check_for_row_in_list_table('2: 공작깃털로 그물만들기')
+
+        self.fail('Finish the test!')
+```
+
 
 ## 6장. 최소 동작 사이트 구축
 
 - 앞의 5장에서 발견한 functional_test의 문제 (db가 기록되는 문제)를 해결하기위해 `LiveServerTestCase` 사용
+
+```
+from django.test import LiveServerTestCase
+
+class NewVisitorTest(LiveServerTestCase):
+    ...
+```
+
+그럼 db와 연결되지 않고 장고에서 제공하는 test server에 작업을 하기 때문에 기록이 남지 않는것을 볼 수 있다.
+
+
+### YAGNI
+
+- `You ain't goona need it`
+- 새로운 아이디어가 생겼을때 과도한 열정을 억제해주는 경전
+
+
+> 기억해둘 만 한 test assertion (django)
+- `assertRedirects`, `assertContains`
+
+### 알아두면 좋을 TDD개념
+- `Test isolation`, `Glodbal state`: 각각의 테스트가 다른 테스트에 영향을 끼쳐서는 안된다 => 즉, 테스트 마지막에는 영구적인 상테를 초기화 // => FT(integration test)인 경우에는 어떻게 해야할지?
+- 테스트 고트님 vs 리팩토링 캣: 한 동작 확인 이후 다른 동작 확인
+
 
