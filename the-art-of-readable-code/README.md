@@ -51,54 +51,6 @@ class Thread {
 - 재치보다는 명확하고 간결한 이름
 
 
-#### 예시
-
-- v15_www 리팩토링 예시
-
-```python
-def program_list_view(request, category_slug):
-    ...
-    page_title = get_page_title(category_slug)
-
-    return render(request, "webapp/program_list.html", context={
-    ...
-    })
-
-...
-
-def get_page_title(category_slug):
-	"""
-	category_slug => (조건에 따라) "Korean {category_slug} - OnDemandKorea" 로 title 포매팅
-	"""
-    tmp_title = _(category_slug.title())
-    if any(keyword in tmp_title for keyword in ["Drama", "Variety", "Documentary"]):
-        tmp_title = f"Korean {tmp_title}"
-
-    return f"{tmp_title} - OnDemandKorea"
-```
-
-- page_title을 가져오는 `get_page_title`?
-- `page_title`이 모호? html title tag를 명확히 나타내주지 못함
-- get? 어디서 가져오는지, 기존에 존재하는 값인지 등이 모호함
-- generate, create / 아니면 단순 포메팅이기 때문에 format, trim 도 괜찮을 듯 하지만 헷갈릴 우려도 있음
-- `(category_slug)`를 인자로 받으므로 suffix로 `_from`을 넣어주는 것도 좋을듯
-- `page_title` 대신 `html_page_title`, `html_title`도 고려 (실제로는 기존에 쓰는 값이 `page_title`이기 때문에 통일성을 고려)
-
-그래서 나온 후보군은
-
-```
-# generate이지만 완전 생성은 아님
-generate_html_title_from(category_slug)
-
-# 포멧 => 초기화의 느낌이 조금 남
-format_html_title_from(category_slug)
-
-# trim => 단어가 직관적이지 않음
-trim_html_title_from(category_slug)
-```
-
-> Alfred powerpack을 사용중이라면 synonyms/antonyms 검색하는 `alfred-powerthesaururs` workflow (https://github.com/clarencecastillo/alfred-powerthesaurus) 사용해봐도 좋을듯
-
 
 ### tmp나 retval같은 보편적인 이름 피하기
 
